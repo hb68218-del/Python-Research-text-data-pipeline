@@ -1,167 +1,113 @@
+# Research Text Data Processing Pipeline (Python)
 
-
-# Python-Research-text-data-pipeline
-
-## Project Objective
-
-This project examines instances of government retaliation against publicly traded firms using large scale news and document data. The objective is to transform unstructured document exports into structured, analysis ready datasets that support content analysis, interrater reliability testing, and empirical research.
-
-The project progresses from raw document ingestion to automated parsing, metadata extraction, keyword classification, and data validation. Emphasis is placed on reproducibility, scalability, and methodological transparency.
+**Technical Research & Data Engineering Project**  
+**Contributor:** Haeun (Sally) Bae
 
 ---
 
-## Problem Overview
+## Introduction
 
-Large scale research on government firm interactions requires systematic identification of relevant events across thousands of documents. Manual review is time intensive, difficult to replicate, and prone to inconsistency.
+This repository documents my technical contributions to an academic research project involving large scale analysis of unstructured text data. My work focused on designing and implementing a Python based data processing pipeline that converts raw document exports into clean, structured, and analysis ready datasets.
 
-This project addresses these challenges by implementing an automated data processing pipeline that standardizes document handling and classification.
-
----
-
-## Tools and Technologies Used
-
-- Python for text processing and automation 
-- Regular expressions for structured parsing  
-- CSV and plain text data pipelines
-- Cursor and other genAI coding assistant
+The project emphasizes automation, reproducibility, and data quality. All work presented here reflects **methods and technical implementation only** and does not include unpublished research findings or substantive analysis.
 
 ---
 
-## Data Description
+## Project Purpose
 
-### Data Sources
+The purpose of this project was to support academic research by improving how large volumes of unstructured document data are prepared for analysis. Manual document review is inefficient and inconsistent at scale. This pipeline enables systematic, repeatable preprocessing that supports downstream quantitative and qualitative research workflows.
 
-- Factiva news exports  
-- Batch `.rtf` files containing multiple articles per file
-<img width="1535" height="904" alt="image" src="https://github.com/user-attachments/assets/58912fc1-e707-47f7-a660-aedb76cc9b3f" />
+---
+
+## What I Built
+<img width="1879" height="761" alt="image" src="https://github.com/user-attachments/assets/c73fb58d-afa3-4bb4-bca0-1665961ed6b8" />
+<img width="2279" height="1064" alt="image" src="https://github.com/user-attachments/assets/143f5616-c5e2-42bc-955c-fa5abbafe5bb" />
+
+
+I designed and implemented an end to end Python pipeline that:
+
+- Ingests large batches of unstructured document files  
+- Converts rich text documents into normalized plain text  
+- Splits bundled files into individual document level records  
+- Extracts structured metadata using pattern matching  
+- Applies keyword based flagging to support document filtering  
+- Produces clean outputs suitable for research use  
+
+---
+
+## Technical Process Overview
+
+### Document Ingestion
+- Automated traversal of raw data directories  
+- Preservation of original files for traceability
+- <img width="1535" height="904" alt="image" src="https://github.com/user-attachments/assets/58912fc1-e707-47f7-a660-aedb76cc9b3f" />
 <img width="836" height="1116" alt="image" src="https://github.com/user-attachments/assets/796f45e6-9b44-47db-9acd-6d79cde209c0" />
 
-
-### Data Scope
-
-- Publicly traded firms  
-- Coverage across multiple U.S. states  
-- Multi year time span  
-
----
-
-## Data Processing Pipeline
-
-### File Ingestion
-
-- Imported raw document exports in batch format  
-- Preserved original files in read only state  
-- Automated directory traversal for scalable processing
+### Text Cleaning and Normalization
+- Removal of formatting artifacts  
+- Standardization of whitespace and encoding  
+- Preparation of text for structured parsing
+  <img width="1215" height="636" alt="image" src="https://github.com/user-attachments/assets/17b23be2-43c8-484b-90e5-777d2dd51286" />
+  <img width="1394" height="830" alt="image" src="https://github.com/user-attachments/assets/cb951e9d-8e1b-4738-9d5b-b45ab789e1a0" />
 
 
-
-### Text Conversion and Cleaning
-
-- Converted rich text documents to plain text  
-- Removed formatting artifacts and encoding inconsistencies  
-- Standardized whitespace and line breaks
 
 ### Document Segmentation
+- Identification of document boundaries within batch files  
+- Enforcement of one document per observation
+  <img width="859" height="439" alt="image" src="https://github.com/user-attachments/assets/1d5d66ed-1efc-4f43-a85f-2c8e529db9cf" />
 
-- Identified article boundaries within bundled files  
-- Split batch files into individual documents  
-- Ensured one document per observation  
 
----
-
-## Metadata Extraction
-
-### Metadata Fields Extracted
-
+### Metadata Extraction
+Extracted and standardized fields include:
 - Document ID  
 - Title  
 - Publication date  
 - Author  
 - Source  
 - Firm or organization reference  
-- Full article text  
-<img width="1587" height="1225" alt="image" src="https://github.com/user-attachments/assets/24dcc8ed-b881-4f17-aa24-fd6ffd30aede" />
+- Full document text
+<img width="1271" height="985" alt="image" src="https://github.com/user-attachments/assets/c0d67d39-1623-4ca2-a875-9e7d44329769" />
 
-### Extraction Logic
 
-Metadata was extracted using structured pattern matching and fallback rules to minimize missing values and ensure consistency across documents.
+Parsing logic was implemented using regular expressions with fallback rules to reduce missing values.
+
+### Keyword Detection
+- Configurable keyword framework  
+- Automated scanning across full text  
+- Generation of keyword hit counts and indicator flags
+  <img width="1526" height="1096" alt="image" src="https://github.com/user-attachments/assets/7a0c4537-aa11-4225-8951-f8dd8380a15f" />
+
 
 ---
 
-## Keyword Classification and Topic Tagging
+## Tools and Technologies Used
 
-### Keyword Framework
-<img width="1528" height="1094" alt="image" src="https://github.com/user-attachments/assets/6cdf163d-a576-440f-a5da-69d740ecf0da" />
-
-- Government actions and enforcement  
-- Regulatory and legal disputes  
-- Public policy responses  
-- Firm level reactions  
-
-### Classification Method
-
-- Automated keyword detection across full document text  
-- Generated keyword hit counts per document  
-- Assigned categorical flags for downstream analysis  
-- Logged ambiguous cases for manual review  
+- Python  
+- Regular expressions  
+- CSV and text based data pipelines  
+- File system automation  
+- Cursor and other GenAI coding assistant
 
 ---
 
-## Data Validation and Quality Control
-<img width="2232" height="813" alt="image" src="https://github.com/user-attachments/assets/3f044252-c233-4419-97ec-8e09ca802dd6" />
+## Skills Demonstrated
 
-### Structural Validation
-
-- Verified one row per document  
-- Confirmed alignment between metadata and text outputs  
-
-### Content Validation
-
-- Flagged incomplete or low confidence documents  
-- Logged cases requiring additional review  
-
----
-
-## Research Outputs
-
-### Structured Outputs
-
-- Metadata dataset in CSV format  
-- Cleaned document level text files  
-
-
-### Analytical Outputs
-
-- Summary metrics on document coverage  
-- Keyword frequency distributions  
-<img width="1879" height="761" alt="image" src="https://github.com/user-attachments/assets/c73fb58d-afa3-4bb4-bca0-1665961ed6b8" />
-
----
-
-## Limitations
-
-### Methodological Limitations
-
-- Keyword based classification may produce false positives  
-- Context dependent interpretation required  
-
-### Data Limitations
-
-- Coverage limited to available news reporting  
-- Variation in document structure across sources  
-
----
-## Technical Skills Demonstrated
-
+- Unstructured text processing  
 - Python scripting and automation  
-- Text processing and regular expressions  
 - Data cleaning and preprocessing  
-- Pipeline design for unstructured data  
-- Reproducible research workflows  
-- Data validation and quality control  
+- Metadata design and extraction  
+- Pipeline development for research workflows  
+- Reproducible and auditable data preparation  
 
 ---
 
 ## Outcome and Impact
 
-The technical pipeline successfully transformed large scale unstructured document exports into clean, structured datasets suitable for academic research workflows. The reliability, scalability, and clarity of the technical implementation contributed to the project’s selection for presentation at the **Terry College of Business Annual Stakeholder Research Meeting**, where the focus was on methodology and technical approach rather than research findings.
+The completed pipeline successfully transformed large scale unstructured document exports into structured datasets that could be reliably used by the research team. The technical rigor and scalability of this work contributed to the project being selected for presentation at the **Terry College of Business Annual Stakeholder Research Meeting**, where the focus was on methodology and technical approach.
+
+---
+
+## Notes
+
+This repository presents technical methods only. Research findings, interpretations, and datasets are intentionally excluded to respect ongoing academic work.
