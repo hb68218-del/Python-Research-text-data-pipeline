@@ -35,11 +35,10 @@ This project addresses these challenges by implementing an automated data proces
 
 ## Tools and Technologies Used
 
-- Python for text processing and automation  
+- Python for text processing and automation 
 - Regular expressions for structured parsing  
-- CSV and plain text data pipelines  
-- Git and GitHub for version control  
-- Spreadsheet tools for validation and review  
+- CSV and plain text data pipelines
+- Cursor and other genAI coding assistant
 
 ---
 
@@ -145,10 +144,12 @@ Metadata was extracted using structured pattern matching and fallback rules to m
 - Cleaned document level text files  
 
 <img width="1563" height="1200" alt="image" src="https://github.com/user-attachments/assets/2797eb71-59dd-4374-b873-518eae68b2b9" />
+
 ### Analytical Outputs
 
 - Summary metrics on document coverage  
 - Keyword frequency distributions  
+<img width="1879" height="761" alt="image" src="https://github.com/user-attachments/assets/c73fb58d-afa3-4bb4-bca0-1665961ed6b8" />
 
 ---
 
