@@ -108,6 +108,7 @@ Metadata was extracted using structured pattern matching and fallback rules to m
 ---
 
 ## Data Validation and Quality Control
+<img width="2232" height="813" alt="image" src="https://github.com/user-attachments/assets/3f044252-c233-4419-97ec-8e09ca802dd6" />
 
 ### Structural Validation
 
